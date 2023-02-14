@@ -19,8 +19,13 @@ function sendMail(e){
         alert("sucsess"+res.status)
         document.querySelector('.sent-message').style.visibility='visible'
         loading.style.visibility='hidden'
+        console.log(res.status);
         
     })
-    document.querySelector('.error-message').style.visibility='visible'
-    loading.style.visibility='hidden'
+    if(removeEventListener.status==200){
+        loading.style.visibility='hidden'
+    }else{
+        console.log("error");
+    // document.querySelector('.error-message').style.visibility='visible'
+    }
 }
